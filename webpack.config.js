@@ -5,8 +5,7 @@
   entry: path.resolve(__dirname, './scripts/script.js'),
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "app.js",
-    publicPath: '/'
+    filename: "app.js"
   },
   module: {
     rules: [
@@ -22,7 +21,7 @@
 				use: {
 					loader: "file-loader",
 					options: {
-						name: "[name].[ext]"
+						name: "[path][name].[ext]"
 					}
 				}
       }

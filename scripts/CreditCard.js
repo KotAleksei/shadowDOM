@@ -17,7 +17,6 @@ export default class CreditCard extends HTMLElement {
     btnEl.textContent = 'Submit';
     warnMessage.textContent = '*card payments only Visa and MasterCard';
     style.textContent = styles;
-
     formEl.classList.add('creditCard');
     btnEl.classList.add('btnSubmit');
     warnMessage.classList.add('warning');
@@ -47,7 +46,10 @@ export default class CreditCard extends HTMLElement {
       e.preventDefault();
       getModalWindow.classList.add('show');
     })
-    getBtnLink.addEventListener('click', e => getModalWindow.classList.remove('show'));
+    getBtnLink.addEventListener('click', e => {
+      getModalWindow.classList.remove('show');
+      getInputLink.value = '';
+    });
     getInputLink.addEventListener('input', e => validationInput(e, getInputLink));
   }
 }

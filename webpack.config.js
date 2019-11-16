@@ -4,9 +4,9 @@
  const conf = {
   entry: path.resolve(__dirname, './scripts/script.js'),
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     filename: "app.js",
-    publicPath: '/dist/'
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -16,6 +16,15 @@
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+				use: {
+					loader: "file-loader",
+					options: {
+						name: "[name].[ext]"
+					}
+				}
       }
     ]
   },

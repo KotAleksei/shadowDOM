@@ -12,6 +12,7 @@ export default class CreditCard extends HTMLElement {
     const warnMessage = document.createElement('span');
     const addImgPartnerCard = document.createElement('div');
     const getInputLink = document.querySelector('cc-input').shadowRoot.children[0];
+    const ccInputEl = document.querySelector('cc-input');
 
     labelEl.textContent = 'Card for payment';
     btnEl.textContent = 'Submit';
@@ -49,6 +50,8 @@ export default class CreditCard extends HTMLElement {
     getBtnLink.addEventListener('click', e => {
       getModalWindow.classList.remove('show');
       getInputLink.value = '';
+      addImgPartnerCard.removeAttribute(addImgPartnerCard.attributes[0].name);
+      ccInputEl.removeAttribute(ccInputEl.attributes[0].name);
     });
     getInputLink.addEventListener('input', e => validationInput(e, getInputLink));
   }

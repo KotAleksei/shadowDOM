@@ -1,3 +1,5 @@
+import Visa from '../img/visa-1527435-1298265.png';
+import MasterCard from '../img/mastercard-logo-icon-png_44630.png';
 const styles = `
 .warning {
   display: block;
@@ -29,7 +31,7 @@ label {
   width: 50px;
   height: 50px;
   background-size: cover;
-  background-image: url('./img/visa-1527435-1298265.png');
+  background-image: url(${Visa});
   animation: addImg 0.4s ease;
 }
 .partnerMasterCard {
@@ -40,7 +42,7 @@ label {
   width: 50px;
   height: 50px;
   background-size: cover;
-  background-image: url('./img/mastercard-logo-icon-png_44630.png');
+  background-image: url(${MasterCard});
   animation: addImg 0.4s ease;
 }
 @keyframes addImg {

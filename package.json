@@ -1,4 +1,5 @@
 {
+  "homepage": "https://kotaleksei.github.io/shadowDOM/",
   "name": "vgs_test",
   "version": "1.0.0",
   "description": "VGS_Test_Task",
@@ -6,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development --open --config webpack.config.js",
-    "build": "webpack --mode production "
+    "build": "webpack --mode production ",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "KotAleksei",
   "license": "ISC",
@@ -14,10 +17,14 @@
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
     "babel-loader": "^8.0.6",
+    "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "path": "^0.12.7",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
